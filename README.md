@@ -1,4 +1,4 @@
-# learn_lamp_stack
+# learn_lamp_stack 1
 Cook book to install a LAMP stack
 
 TODO:
@@ -10,5 +10,9 @@ Write Chefspec tests
 Write InSpec tests
 Install Mysql on CentOS 7
 Install Apache on CentOS 7
-Write ChefSpec and Inspec for SELinux: permissive line
+Create knowledge base of current known commands
+- upload Berks dependencies of selinux and firewall
+- Write ChefSpec and Inspec for SELinux: permissive line
+     ChefSpec NOTE: Pass on this for now
+     - InSpec
 - Edit the metadata.rb file to customize to the project
