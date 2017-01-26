@@ -6,7 +6,8 @@ Apply to each AWS Ubuntu node
 Refactor cookbook to include Ubuntu 1604
 Refactor cookbook to include Ubuntu 1404
 Apply to AWS node
-Write Chefspec tests
+Write Serverspec tests for firewalld
+Write Chefspec tests to check certain recipe was included
 Write InSpec tests
 Install Mysql on CentOS 7
 Install Apache on CentOS 7
