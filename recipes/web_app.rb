@@ -24,9 +24,21 @@ directory '/var/www/customers/public_html' do
 end
 
 # Write the home page.
-file '/var/www/customers/public_html/index.html' do
-  content '<html>This is a placeholder</html>'
+#template "#{node['learn_lamp_stack']['docroot']}/index.php" do
+template "/var/www/customers/public_html/index.php" do
+  source 'index.php.erb'
   mode '0644'
   owner node['learn_lamp_stack']['webapp']['user']
   group node['learn_lamp_stack']['webapp']['group']
+end
+
+# Install the mod_php Apache module.
+httpd_module 'php' do
+  instance 'customers'
+end
+
+# Install php-mysql. You need php5 for Ubuntu 16
+package 'php-mysql' do
+  action :install
+  notifies :restart, 'httpd_service[customers]'
 end

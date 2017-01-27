@@ -26,3 +26,7 @@ suites:
       inspec_tests:
         - test/smoke/default
     attributes:
+      learn_lamp_stack:
+        database:
+          rootpw: 'mysql_root_password'
+          adminpw: 'mysql_admin_password'
