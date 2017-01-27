@@ -10,11 +10,9 @@ require 'spec_helper'
 #    %r{ipv6 filter INPUT 50 -p tcp -m tcp -m multiport --dports 443,80 -m comment --comment 'open ports [80, 443]' -j ACCEPT}
 #    ]
 
-#describe command('firewall-cmd --permanent --direct --get-all-rules') do
-#    expected_rules.each do |r|
-#        its(:stdout) { should match(r) }
-#    end
-#end
+describe command('firewall-cmd --permanent --direct --get-all-rules') do
+    its(:stdout) { should match /allow world to ssh/ }
+end
 
 describe service('firewalld') do
     it { should be_running }
