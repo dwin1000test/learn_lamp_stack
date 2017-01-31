@@ -18,13 +18,13 @@ httpd_config 'customers' do
 end
 
 # Create the document root directory.
-#directory node['learn_lamp_stack']['docroot'] do
+#directory node['learn_lamp_stack']['webapp']['docroot'] do
 directory '/var/www/customers/public_html' do
   recursive true
 end
 
 # Write the home page.
-#template "#{node['learn_lamp_stack']['docroot']}/index.php" do
+#template "#{node['learn_lamp_stack']['webapp']['docroot']}/index.php" do
 template "/var/www/customers/public_html/index.php" do
   source 'index.php.erb'
   mode '0644'

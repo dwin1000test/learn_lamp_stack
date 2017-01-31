@@ -1,5 +1,5 @@
 describe command("curl -L localhost") do
-    its(:stdout) { should match /placeholder/ }
+    its(:stdout) { should match /dave\.richards\@example\.com/ }
 end
 
 describe file('/etc/httpd-customers/conf.d/customers.conf') do

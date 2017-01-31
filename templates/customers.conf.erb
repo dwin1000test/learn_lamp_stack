@@ -1,13 +1,13 @@
 <VirtualHost *:80>
   ServerName <%= node['hostname'] %>
-  ServerAdmin <%= node['learn_lamp_stack']['email'] %> 
+  ServerAdmin <%= node['learn_lamp_stack']['webapp']['email'] %> 
 
-  DocumentRoot <%= node['learn_lamp_stack']['docroot'] %>
+  DocumentRoot <%= node['learn_lamp_stack']['webapp']['docroot'] %>
   <Directory "/">
           Options FollowSymLinks
           AllowOverride None
   </Directory>
-  <Directory <%= node['learn_lamp_stack']['docroot'] %> >
+  <Directory <%= node['learn_lamp_stack']['webapp']['docroot'] %> >
           Options Indexes FollowSymLinks MultiViews
           AllowOverride None
           Require all granted
@@ -20,8 +20,8 @@
   CustomLog /var/log/httpd/access.log combined
   ServerSignature Off
 
-  #AddType application/x-httpd-php .php
-  #AddType application/x-httpd-php-source .phps
-  #DirectoryIndex index.php index.html
+  AddType application/x-httpd-php .php
+  AddType application/x-httpd-php-source .phps
+  DirectoryIndex index.php index.html
 </VirtualHost>
 
